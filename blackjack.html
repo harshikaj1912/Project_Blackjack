@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack - CSS Only</title>
+    <link rel="stylesheet" href="blackstyles.css">
+</head>
+<body>
+    <!-- 🔥 Welcome Banner (Fixed to Top) -->
+    <div class="welcome-banner">
+        <h1>Welcome to Blackjack Game</h1>
+    </div>
+
+    <div class="blackjack-container">
+        <input type="checkbox" id="restart-game">
+        <div class="blackjack-table restart-zoom">
+            <h1>♠️ Blackjack ♣️</h1>
+            <p>Get as close to 21 as possible without going over!</p>
+
+            <!-- Dealer Section -->
+            <div class="dealer-area">
+                <h2>Dealer</h2>
+                <div class="cards">
+                    <div class="card back"></div> <!-- Hidden Card -->
+                    <div class="card dealer-hidden">?</div> <!-- Hidden initially -->
+                </div>
+                <p>Total: <span class="dealer-total">?</span></p>
+            </div>
+
+            <!-- Player Section with Animated Cards -->
+            <div class="player-area">
+               <h2>Player</h2>
+               <div class="cards">
+                    <div class="card card-a">A♠</div>  <!-- A♠ with left animation -->
+                    <div class="card card-9">9♦</div>  <!-- 9♦ with right animation -->
+               </div>
+               <p>Total: <span class="player-total">10</span></p>
+            </div>
+
+            <!-- Player Actions (Redirecting to Explanation Pages with Game) -->
+            <div class="actions">
+                <a href="hit.html" class="button">Hit</a>
+                <a href="stand.html" class="button">Stand</a>
+                <a href="double.html" class="button">Double Down</a>
+                <a href="split.html" class="button">Split</a>
+            </div>
+
+            <!-- Betting Chips (Updated to Box Style) -->
+            <div class="chips">
+                <div class="chip-box">$10</div>
+                <div class="chip-box">$50</div>
+                <div class="chip-box">$100</div>
+            </div>
+
+            <!-- Player 1 Betting Area -->
+            <div class="player-bet">
+                <h3>Player 1 - Place Your Bet</h3>
+                <div class="chips">
+                    <input type="radio" id="p1-bet10" name="p1-bet">
+                    <label for="p1-bet10" class="chip-box">$10</label>
+
+                    <input type="radio" id="p1-bet50" name="p1-bet">
+                    <label for="p1-bet50" class="chip-box">$50</label>
+
+                    <input type="radio" id="p1-bet100" name="p1-bet">
+                    <label for="p1-bet100" class="chip-box">$100</label>
+                </div>
+            </div>
+
+            <!-- Player 2 Betting Area -->
+            <div class="player-bet">
+                <h3>Player 2 - Place Your Bet</h3>
+                <div class="chips">
+                    <input type="radio" id="p2-bet10" name="p2-bet">
+                    <label for="p2-bet10" class="chip-box">$10</label>
+
+                    <input type="radio" id="p2-bet50" name="p2-bet">
+                    <label for="p2-bet50" class="chip-box">$50</label>
+
+                    <input type="radio" id="p2-bet100" name="p2-bet">
+                    <label for="p2-bet100" class="chip-box">$100</label>
+                </div>
+            </div>
+
+            <!-- Dealer's Hidden Card Reveal -->
+            <div class="dealer-reveal">
+                <input type="checkbox" id="reveal-card">
+                <label for="reveal-card" class="flip-label">Reveal Dealer’s Card</label>
+                <div class="dealer-hidden-card">
+                    <div class="card">K♣</div> <!-- Dealer’s Hidden Card -->
+                </div>
+            </div>
+
+            <!-- Restart Game -->
+            <label for="restart-game" class="restart-button">Restart Game</label>
+        </div>
+    </div>
+</body>
+</html>

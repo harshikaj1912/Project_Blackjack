@@ -1,0 +1,350 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #145A32; /* Full green background */
+    color: white;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Welcome Banner */
+.welcome-banner {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #145A32;
+    color: white;
+    padding: 15px 0;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 100;
+}
+
+/* Blackjack Container */
+.blackjack-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 110px;
+}
+
+/* Table Content */
+.blackjack-table {
+    width: 90%;
+    max-width: 700px;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Dealer & Player Sections */
+.dealer-area, .player-area {
+    margin: 20px 0;
+}
+
+/* Cards Styling */
+.cards {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* Individual Card */
+.card {
+    width: 60px;
+    height: 90px;
+    background: white;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: scale(1.1);
+}
+
+/* Back of the Card */
+.card.back {
+    background: linear-gradient(45deg, #C70039, #900C3F);
+    color: transparent;
+}
+
+/* Buttons Styling */
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* Game Buttons */
+.button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: #F39C12;
+    color: white;
+}
+
+/* Button Hover */
+.button:hover {
+    background: #E74C3C;
+    transform: scale(1.1);
+}
+
+/* Restart Game Button */
+.restart-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #3498DB;
+    color: white;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Restart Button Hover Effect */
+.restart-button:hover {
+    background: #2E86C1;
+    transform: scale(1.1);
+}
+
+/* Hidden Dealer Card */
+.dealer-hidden-card {
+    margin-top: 10px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.5s ease-in-out;
+}
+
+/* Reveal Dealer Card Box */
+.dealer-reveal {
+    margin-top: 20px;
+}
+
+/* Reveal Button Styling */
+.flip-label {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #3498DB;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+    width: 200px;
+}
+
+/* Hover Effect for Reveal Card */
+.flip-label:hover {
+    background: #2E86C1;
+    transform: scale(1.1);
+}
+
+/* Show Dealer Card on Click */
+input[type="checkbox"]:checked ~ .dealer-hidden-card {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Animation for Player's Cards */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-150px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(150px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Apply Animations to Player's Cards */
+.card-a { /* A♠ */
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+.card-9 { /* 9♦ */
+    animation: slideInRight 1s ease-out forwards;
+}
+
+/* Betting Chips (Box Style) */
+.chips {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Betting Chip Box */
+.chip-box {
+    width: 80px;
+    height: 50px;
+    background: gold;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    border: 2px solid #DAA520;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect for Chips */
+.chip-box:hover {
+    transform: scale(1.1);
+    background: #FFD700;
+}
+
+/* Player Betting Section */
+.player-bet {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Hidden Radio Buttons */
+input[type="radio"] {
+    display: none;
+}
+
+/* Betting Chip Selected Effect */
+input[type="radio"]:checked + label {
+    background: #FFD700;
+    transform: scale(1.1);
+    border: 3px solid white;
+}
+/* Corner Card Symbols */
+.corner-card {
+    position: absolute;
+    width: 8cm; /* Set fixed width */
+    height: 8cm; /* Set fixed height */
+    font-size: 7cm; /* Large symbol size */
+    font-weight: bold;
+    opacity: 1; /* Ensure full visibility */
+    color: white; /* White color for visibility */
+}
+
+/* Positioning */
+.top-left { top: 10px; left: 10px; }
+.top-right { top: 10px; right: 10px; }
+.bottom-left { bottom: 10px; left: 10px; }
+.bottom-right { bottom: 10px; right: 10px; }
+
+/* Landing Page Styling */
+.landing-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+/* Background Random Card Numbers */
+.card-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none; /* Prevents interfering with clicks */
+}
+
+/* Individual Card Numbers */
+.card-value {
+    position: absolute;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.2); /* Faded appearance */
+    transform: rotate(var(--rotate));
+    animation: floating 4s infinite alternate ease-in-out;
+}
+
+/* Floating Effect */
+@keyframes floating {
+    from { transform: translateY(0px) rotate(var(--rotate)); }
+    to { transform: translateY(-10px) rotate(var(--rotate)); }
+}
+/* Start Game Button */
+.start-button {
+    display: inline-block;
+    padding: 20px 40px; /* Bigger button */
+    font-size: 24px; /* Larger text */
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background-color: #F39C12; /* Orange Button */
+    border-radius: 15px; /* Rounded corners */
+    transition: 0.3s ease-in-out;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); /* Layered shadow effect */
+    border: 3px solid #E67E22; /* Slightly darker border */
+}
+
+/* Button Hover Effect */
+.start-button:hover {
+    background-color: #E74C3C;
+    transform: scale(1.1);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.7); /* Stronger shadow */
+}
+
+
+/* Restart Game Animation */
+.restart-zoom {
+    animation: zoomInOut 0.5s ease-in-out;
+}
+
+/* Keyframes for Restart Animation */
+@keyframes zoomInOut {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
